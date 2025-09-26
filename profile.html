@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f9; padding: 50px; text-align: center; }
+        .info { background: #fff; padding: 20px; border-radius: 10px; display: inline-block; text-align: left; }
+    </style>
+</head>
+<body>
+    <h2>My Profile</h2>
+    <div class="info">
+        <p><strong>Username:</strong> {{ current_user.username }}</p>
+        <p><strong>Name:</strong> {{ current_user.name }}</p>
+        <p><strong>Age:</strong> {{ current_user.age }}</p>
+        <p><strong>Govt ID:</strong> {{ current_user.govt_id }}</p>
+        <p><strong>Language:</strong> {{ current_user.language }}</p>
+    </div>
+    <br><br>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

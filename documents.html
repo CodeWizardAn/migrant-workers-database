@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Documents</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+    <h2>Your Documents</h2>
+    {% for doc in docs %}
+        <div style="margin-bottom:10px; border:1px solid #ccc; padding:5px;">
+            <strong>{{ doc.title }}</strong> ({{ doc.date }})<br>
+            <a href="{{ url_for('get_document', filename=doc.filename) }}">View/Download</a>
+        </div>
+    {% else %}
+        <p>No documents uploaded yet.</p>
+    {% endfor %}
+</body>
+</html>

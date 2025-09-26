@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f9; text-align: center; padding: 50px; }
+        h2 { margin-bottom: 20px; }
+        .btn { display: inline-block; padding: 12px 20px; margin: 10px; background: #007bff; color: white; text-decoration: none; border-radius: 8px; }
+        .btn:hover { background: #0056b3; }
+        form { display: inline; }
+    </style>
+</head>
+<body>
+    <h2>Welcome, {{ current_user.name }}</h2>
+    <a href="{{ url_for('upload') }}" class="btn">Upload Document</a>
+    <a href="{{ url_for('view_docs') }}" class="btn">My Documents</a>
+    <a href="{{ url_for('qr') }}" class="btn">QR Code</a>
+    <a href="{{ url_for('profile') }}" class="btn">Profile</a>
+    <form action="{{ url_for('delete_account') }}" method="POST" onsubmit="return confirm('Delete account permanently?')">
+        <button type="submit" class="btn" style="background:#dc3545;">Delete Account</button>
+    </form>
+    <a href="{{ url_for('logout') }}" class="btn" style="background:#6c757d;">Logout</a>
+</body>
+</html>
